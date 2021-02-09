@@ -8,5 +8,10 @@ class KategoriModel(models.Model):
 
     class Meta:
         db_table = 'kategori'
+        verbose_name = 'Kategori'
+        verbose_name_plural = 'Kategoriler'
 
     # makemigrations yapabilmek için __init__.py'e ekle !
+
+    def __str__(self):
+        return self.isim
