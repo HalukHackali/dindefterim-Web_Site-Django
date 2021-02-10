@@ -1,10 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>İletişim</title>
-</head>
-<body>
-<h1>İletişim Sayfası</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+
+
+<title>{% block titile %}İletişim | dindefterim {% endblock %}</title>
+{% block content %}
+
+<section id="page-breadcrumb">
+        <div class="vertical-center sun">
+             <div class="container">
+                <div class="row">
+                    <div class="action">
+                        <div class="col-sm-12">
+                            <h1 class="title">İletişim</h1>
+                            <p>Şuan Yapım Aamasında | En kısa zamanda iletişim sayfamızı açmak için çalışıyoruz.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </section>
+    <!--/#action-->
+
+    <section id="map-section">
+        <div class="container">
+            <div id="gmap"></div>
+            <div class="contact-info">
+                <h2>İetişim</h2>
+                <address>
+                E-mail: <a href="mailto:someone@example.com">email@email.com</a> <br>
+                Phone: +1 (123) 456 7890 <br>
+                Fax: +1 (123) 456 7891 <br>
+                </address>
+
+                <h2>Adres</h2>
+                <address>
+                    www.dindefterim.com <br>
+                    İstanbul, Fatih <br>
+                    Türkiye <br>
+                </address>
+            </div>
+        </div>
+    </section> <!--/#map-section-->
+
+{% endblock %}
