@@ -1,4 +1,6 @@
 {% load static %}
+{% load kategori_list %}
+{% kategori_list as kategoriler %}
 
 <header id="header">
         <div class="container">
@@ -33,13 +35,14 @@
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="/">Anasayfa</a></li>
+                        <li class="active"><a href="{% url 'anasayfa' %}">Anasayfa</a></li>
                         <li class="dropdown"><a href="#">Sınıflar <i class="fa fa-angle-down"></i></a>
                             <ul role="menu" class="sub-menu">
-                                <li><a href="#">5.Sınıf</a></li>
-                                <li><a href="#">6.Sınıf</a></li>
-                                <li><a href="#">7.Sınıf</a></li>
-                                <li><a href="#">8.Sınıf</a></li>
+
+                                {% for kategori in kategoriler %}
+                                    <li><a href="#">{{ kategori.isim }}</a></li>
+                                {% endfor %}
+
                             </ul>
                         </li>
                         <li class="dropdown"><a href="#">Pages <i class="fa fa-angle-down"></i></a>
