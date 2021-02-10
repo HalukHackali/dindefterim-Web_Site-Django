@@ -81,10 +81,10 @@
                     </ul>
                 </div>
                 <div class="search">
-                    <form role="form">
+                    <form role="form" action="{% url 'anasayfa' %}">
                         <i class="fa fa-search"></i>
                         <div class="field-toggle">
-                            <input type="text" class="search-form" autocomplete="off" placeholder="Arama yap">
+                            <input type="search" class="search-form" autocomplete="off" placeholder="Arama yap" name="sorgu">
                         </div>
                     </form>
                 </div>
