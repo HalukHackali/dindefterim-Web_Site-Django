@@ -1,7 +1,6 @@
 from  django.db import models
 from autoslug import AutoSlugField
 from blog.models import KategoriModel
-from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
 
 class YazilarModel(models.Model):
@@ -12,7 +11,7 @@ class YazilarModel(models.Model):
     slug = AutoSlugField(populate_from='baslik', unique=True)
     kategoriler = models.ManyToManyField(KategoriModel, related_name='yazi')
     resim = models.ImageField(upload_to='yazi_resimleri')
-    yazar = models.ForeignKey(User, on_delete=models.CASCADE, related_name='yazilar')
+    yazar = models.ForeignKey('account.CustomUserModel', on_delete=models.CASCADE, related_name='yazilar')
 
     class Meta:
         db_table = 'Yazi'
