@@ -1,8 +1,9 @@
-
+{% extends 'base.html' %}
 {% load static %}
 
 
-
+<title>{% block titile %}Anasayfa | dindefterim {% endblock %}</title>
+{% block content %}
 
 
     <section id="home-slider">
@@ -182,3 +183,4 @@
      </section>
     <!--/#clients-->
 
+{% endblock %}
