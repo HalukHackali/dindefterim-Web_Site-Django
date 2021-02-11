@@ -6,3 +6,4 @@ from .detay import detay
 from .yorum_sil import yorum_sil
 from .yazi_sil import yazi_sil
 from .yazi_guncelle import yazi_guncelle
+from .yazi_ekle import yazi_ekle

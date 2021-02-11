@@ -2,7 +2,7 @@
 {% load crispy_forms_tags %}
 {% load static %}
 
-{% block title%} Yazı Güncelle {% endblock%}
+{% block title%} Yazı Ekle {% endblock%}
 
 {% block content %}
 
@@ -12,8 +12,8 @@
                 <div class="row">
                     <div class="action">
                         <div class="col-sm-12">
-                            <h1 class="title">Yazı Güncelleme</h1>
-                            <p>Yazıyı aşağıdaki formu kullanarak güncelleyebilirsiniz.</p>
+                            <h1 class="title">Yazı Ekle</h1>
+                            <p>Yazıyı aşağıdaki formu kullanarak Ekleyebilirsiniz.</p>
                         </div>
                     </div>
                 </div>
@@ -27,17 +27,17 @@
                 <!-- =============lEFT SIDEBAR============== -->
                 <div class="col-md-9 col-sm-7">
                     <div class="row">
-                         <!-- ============= YAZI GÜNCELLEME ALANI ============== -->
+                         <!-- ============= YAZI EKLEME ALANI ============== -->
                         <div class="col-md-6 col-sm-12 blog-padding-right">
                             <div class="single-blog two-column">
+
                                 <div class="post-content">
                                     <form action="{% url 'yazi-ekle' %}" enctype="multipart/form-data" method="POST">
                                         {% csrf_token %}
                                         {{ form.media }}
                                         {{ form|crispy }}
-                                        <input type="submit" class="btn btn-danger mt-3 mb-3" value="Yazı Güncelle" />
+                                        <input type="submit" class="btn btn-danger mt-3 mb-3" value="Yazı Oluştur" />
                                     </form>
-
                                 </div>
                             </div>
                         </div>
