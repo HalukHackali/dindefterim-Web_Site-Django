@@ -1,6 +1,7 @@
 from django import forms
+from blog.models import IletisimModel
 
-class IletisimForm(forms.Form):
-    email = forms.EmailField(label='E-posta', max_length=50)
-    isim_soyisim = forms.CharField(label='İsim Soyisim', max_length=25)
-    mesaj = forms.CharField(label='Mesajınız', widget=forms.Textarea)
+class IletisimForm(forms.ModelForm):
+    class Meta:
+        model =IletisimModel
+        fields = ('email', 'isim_soyisim', 'mesaj')
