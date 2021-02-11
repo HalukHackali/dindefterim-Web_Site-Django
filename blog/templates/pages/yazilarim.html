@@ -21,10 +21,10 @@
                 <td>{{ yazi.baslik }}</td>
                 <td>{{ yazi.duzenlenme_tarihi }}</td>
                 <td>
-                  <p>
-                    <a class="btn btn-primary" href="#">Düzenle</a>
-                    <a class="btn btn-danger" href="#">Sil</a>
-                  </p>
+                    <p>
+                        <a class="btn btn-primary" href="{% url 'yazi-sil' slug=yazi.slug %}">Yazı Sil</a>
+                        <a class="btn btn-danger" href="{">Yazı Düzenle</a>
+                    </p>
                 </td>
             </tr>
             {% empty %}

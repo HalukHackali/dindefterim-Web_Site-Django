@@ -46,6 +46,12 @@
                                             <li><a href="#"><i class="fa fa-tag"></i>Creative</a></li>
                                             <li><a href="#"><i class="fa fa-heart"></i>32 Love</a></li>
                                             <li><a href="#"><i class="fa fa-comments"></i>3 Comments</a></li>
+
+                                            {% if  request.user == yazi.yazar %}
+                                            <li><a href="{% url 'yazi-sil' slug=yazi.slug %}"><i class="fa fa-trash"></i>Yazı Sil</a></li>
+                                            <li><a href="#"><i class="fa fa-edit"></i>Yazı Düzenle</a></li>
+                                            {% endif %}
+
                                         </ul>
                                     </div>
                                     <div class="blog-share">
@@ -83,6 +89,7 @@
 
                                 <!-- YORUM ALANI -->
                                     <div class="response-area">
+                                        <hr>
                                         <h2 class="bold">Yorumlar</h2>
                                         <ul class="media-list">
                                             {% for yorum in yorumlar %}
