@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 {% load static %}
 
 {% block title %} {{ yazi.baslik }} {% endblock %}
@@ -54,25 +55,33 @@
                                         <span class='st_pinterest_hcount'></span>
                                         <span class='st_email_hcount'></span>
                                     </div>
-                                    <div class="author-profile padding">
+
+                                    <div>
+                                    <h2 class="bold">Yorum Yap</h2>
                                         <div class="row">
+
+                                            <hr>
                                             <div class="col-sm-2">
-                                                <img src="{% static 'images/blogdetails/1.png' %}" alt="">
+                                                <img src="{% static 'images/blogdetails/comment-add-3.png' %}" alt="" width="90px" height="90px">
                                             </div>
+
+                                            <!-- YORUM EKLEME ALANI -->
                                             <div class="col-sm-10">
                                                 {% if request.user.is_authenticated %}
                                                   <form method="POST">
                                                     {% csrf_token %}
-
-                                                    <input type="submit" value="Yorum Yap" class="btn btn-danger mt-3 mb-3" />
+                                                    {{ yorum_ekle_form | crispy }}
+                                                    <input type="submit" value="Yorum Yap" class="btn btn-primary mt-3 mb-3" />
                                                   </form>
                                                 {%else%}
                                                   <p>Yorum yapmak için lütfen üye giriş yapınız.</p>
                                                 {%endif%}
                                             </div>
+                                            <!-- YORUM EKLEME ALANI -->
                                         </div>
                                     </div>
 
+                                <!-- YORUM ALANI -->
                                     <div class="response-area">
                                         <h2 class="bold">Yorumlar</h2>
                                         <ul class="media-list">
@@ -84,13 +93,11 @@
                                                             <a class="pull-left" href="#">
                                                                 <img class="media-object"
                                                                      src="{{ yorum.yazan.avatar.url }}" alt=""
-                                                                     width="127px" height="127px">
+                                                                     width="90px" height="90px">
                                                             </a>
                                                         {% else %}
                                                             <a class="pull-left" href="#">
-                                                                <img class="media-object"
-                                                                     src="{% static 'images/no-avatar.png' %}" alt=""
-                                                                     width="127px" height="127px">
+                                                                <img class="media-object" src="{% static 'images/no-avatar.png' %}" alt="" width="90px" height="90px">
                                                             </a>
                                                         {% endif %}
                                                         <div class="media-body">
@@ -111,7 +118,8 @@
                                                 <p>Bu yazı için hiç yorum yapılmamış. </p>
                                             {% endfor %}
                                         </ul>
-                                    </div><!--/Response-area-->
+                                    </div>
+                                <!-- YORUM ALANI -->
 
 
                                 </div>

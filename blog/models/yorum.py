@@ -5,7 +5,7 @@ from blog.abstract_models import DateAbstractModel
 class YorumModel(DateAbstractModel):
     yazan = models.ForeignKey('account.CustomUserModel', on_delete=models.CASCADE, related_name='yorum')
     yazi = models.ForeignKey(YazilarModel, on_delete=models.CASCADE, related_name='yorumlar')
-    yorum = models.TextField()
+    yorum = models.CharField(max_length=250)
 
     class Meta:
         db_table = 'Yorum'
