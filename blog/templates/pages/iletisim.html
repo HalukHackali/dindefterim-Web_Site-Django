@@ -22,13 +22,14 @@
     <!--/#action-->
 
     <section>
-        <div class="container">
-            <div class="" style="background: #7c3651;">
+        <div class="container" style="margin-bottom: 3px;">
+            <div class="" style="background: #f7f7f7;">
                 <h4>İletişim</h4>
                 <form action="" method="POST">
+                    {{ form.non_field_errors }}
                     {% csrf_token %}
-                    {{ form }}
-                    <input type="submit" value="Gönder">
+                    {{ form.as_p}}
+                    <input type="submit" value="Gönder" class="btn btn-info">
                 </form>
 
             </div>
