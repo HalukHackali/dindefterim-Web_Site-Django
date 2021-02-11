@@ -49,13 +49,13 @@
                         </li>
 
 
-                        <li class="active"><a href="{% url 'iletisim' %}">İletişim</a></li>
+                        <li class=""><a href="{% url 'iletisim' %}">İletişim</a></li>
 
 
                         {% if request.user.is_authenticated %}
-                         <li class="dropdown"><a href="#">Yazılar <i class="fa fa-angle-down"></i></a>
+                         <li class="dropdown"><a href="#">Dashboard <i class="fa fa-angle-down"></i></a>
                             <ul role="menu" class="sub-menu">
-                                    <li class="dropdown"><a href="{% url 'yazilarim' %}">Yazılarım</a></li>
+                                    <li><a href="{% url 'yazilarim' %}">Yazılarım</a></li>
                                     <li><a href="{% url 'yazi-ekle' %}">Yazı Ekle</a></li>
                             </ul>
                         </li>
