@@ -2,7 +2,7 @@
 {% load static %}
 
 
-<title>{% block titile %}İletişim | dindefterim {% endblock %}</title>
+{% block title %}İletişim | dindefterim {% endblock %}
 {% block content %}
 
 <section id="page-breadcrumb">
@@ -21,23 +21,16 @@
    </section>
     <!--/#action-->
 
-    <section id="map-section">
+    <section>
         <div class="container">
-            <div id="gmap"></div>
-            <div class="contact-info">
-                <h2>İetişim</h2>
-                <address>
-                E-mail: <a href="mailto:someone@example.com">email@email.com</a> <br>
-                Phone: +1 (123) 456 7890 <br>
-                Fax: +1 (123) 456 7891 <br>
-                </address>
+            <div class="" style="background: #7c3651;">
+                <h4>İletişim</h4>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {{ form }}
+                    <input type="submit" value="Gönder">
+                </form>
 
-                <h2>Adres</h2>
-                <address>
-                    www.dindefterim.com <br>
-                    İstanbul, Fatih <br>
-                    Türkiye <br>
-                </address>
             </div>
         </div>
     </section> <!--/#map-section-->
