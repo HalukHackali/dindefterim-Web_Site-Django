@@ -49,7 +49,7 @@
 
                                             {% if  request.user == yazi.yazar %}
                                             <li><a href="{% url 'yazi-sil' slug=yazi.slug %}"><i class="fa fa-trash"></i>Yazı Sil</a></li>
-                                            <li><a href="#"><i class="fa fa-edit"></i>Yazı Düzenle</a></li>
+                                            <li><a href="{% url 'yazi-guncelle' slug=yazi.slug %}"><i class="fa fa-edit"></i>Yazı Düzenle</a></li>
                                             {% endif %}
 
                                         </ul>

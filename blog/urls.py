@@ -1,5 +1,5 @@
 from django.urls import path, include
-from blog.views import kategori, yazilarim, anasayfa, iletisim, detay, yorum_sil, yazi_sil
+from blog.views import kategori, yazilarim, anasayfa, iletisim, detay, yorum_sil, yazi_sil, yazi_guncelle
 
 
 urlpatterns = [
@@ -10,4 +10,5 @@ urlpatterns = [
     path('detay/<slug:slug>', detay, name='detay'),
     path('yorum-sil/<int:id>', yorum_sil, name='yorum-sil'),
     path('yazi-sil/<slug:slug>', yazi_sil, name='yazi-sil'),
+    path('yazi-guncelle/<slug:slug>', yazi_guncelle, name='yazi-guncelle'),
 ]
