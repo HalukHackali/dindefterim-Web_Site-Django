@@ -28,7 +28,7 @@
                         <span class="icon-bar"></span>
                     </button>
 
-                    <a class="navbar-brand" href="/">
+                    <a class="navbar-brand" href="{% url 'anasayfa' %}">
                     	<h1><img src="{% static "images/logo.png" %}" alt="logo"></h1>
                     </a>
 
@@ -40,7 +40,7 @@
                             <ul role="menu" class="sub-menu">
 
                                 {% for kategori in kategoriler %}
-                                    <li><a href="#">{{ kategori.isim }}</a></li>
+                                    <li><a href="{% url 'kategori' kategoriSlug=kategori.slug %}">{{ kategori.isim }}</a></li>
                                 {% endfor %}
 
                             </ul>
