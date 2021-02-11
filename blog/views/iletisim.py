@@ -3,7 +3,7 @@ from blog.forms import IletisimForm
 from blog.models import IletisimModel
 
 def iletisim(request):
-    form = IletisimForm()
+    form = IletisimForm(initial={'mesaj': 'Mesaj Konusu: '})
     if request.method == 'POST':
         form = IletisimForm(request.POST)
         if form.is_valid():
