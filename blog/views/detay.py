@@ -16,7 +16,6 @@ class DetayView(View):
             'yazi': yazi,
             'yorumlar': yorumlar,
             'yorum_ekle_form': self.yorum_ekle_form()
-
         })
 
     def post(self, request, slug):
@@ -29,14 +28,6 @@ class DetayView(View):
             yorum.save()
             messages.success(request, 'Yorumunuz eklendi')
         return redirect('detay', slug=slug)
-
-
-
-
-
-
-
-
 
 
 
@@ -53,14 +44,11 @@ class DetayView(View):
 #            yorum.yazan = request.user
 #            yorum.yazi = yazi
 #            yorum.save()
-#
 #    yorum_ekle_form = YorumEkleModelForm()
-#
 #
 #   return render(request, 'pages/detay.html', context={
 #        'yazi': yazi,
 #        'yorumlar': yorumlar,
 #        'yorum_ekle_form' : yorum_ekle_form
-#
 #    })
 '''
