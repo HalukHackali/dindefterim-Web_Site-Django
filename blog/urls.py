@@ -1,5 +1,5 @@
 from django.urls import path
-from blog.views import KategoriListView, yazilarim, anasayfa, iletisim, DetayView, yorum_sil, yazi_sil, yazi_guncelle, yazi_ekle, onemli_siteler
+from blog.views import KategoriListView, yazilarim, anasayfa, iletisim, DetayView, yorum_sil, YaziSilDeleteView, yazi_guncelle, yazi_ekle, onemli_siteler
 from django.views.generic import TemplateView, RedirectView
 
 urlpatterns = [
@@ -13,7 +13,7 @@ urlpatterns = [
     path('yorum-sil/<int:id>', yorum_sil, name='yorum-sil'),
     path('yazi-ekle', yazi_ekle, name='yazi-ekle'),
     path('yazi-guncelle/<slug:slug>', yazi_guncelle, name='yazi-guncelle'),
-    path('yazi-sil/<slug:slug>', yazi_sil, name='yazi-sil'),
+    path('yazi-sil/<slug:slug>', YaziSilDeleteView.as_view(), name='yazi-sil'),
 
     # ÖNEMLİ SİTELER URLS
     path('meb', RedirectView.as_view(url="http://www.meb.gov.tr/"), name='meb'),
