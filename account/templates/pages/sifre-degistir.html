@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+
+{% block title%} Şifre Değiştir {% endblock%}
+{% block content %}
+
+<section id="page-breadcrumb">
+        <div class="vertical-center sun">
+             <div class="container">
+                <div class="row">
+                    <div class="action">
+                        <div class="col-sm-12">
+                            <h1 class="title">Şifre Değiştirme</h1>
+                            <p>Aşağıdaki formu kullanarak şifrenizi değiştirebiliriniz</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </section>
+    <!--/#action-->
+{% include 'components/message.html' %}
+    <section class="mt-3">
+        <div class="container" style="margin-bottom: 3px;margin-top: 18px ">
+            <div class="mt-3" style="background: #f7f7f7;">
+                <form action="{% url 'yazi-ekle' %}" enctype="multipart/form-data" method="POST">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <input type="submit" class="btn btn-danger mt-3 mb-3" value="Şifre Değiştir" />
+                </form>
+
+            </div>
+        </div>
+    </section> <!--/#map-section-->
+
+{% endblock %}
