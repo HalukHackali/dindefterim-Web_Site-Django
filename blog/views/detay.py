@@ -4,7 +4,6 @@ from blog.forms import YorumEkleModelForm
 from django.views import View
 from django.contrib import messages
 
-
 class DetayView(View):
     http_method_names = ['get', 'post']
     yorum_ekle_form = YorumEkleModelForm
