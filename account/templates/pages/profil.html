@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+
+{% block title %}Kullanıcı: {{ profil.username }} | dindefterim {% endblock %}
+{% block content %}
+
+<section id="page-breadcrumb">
+        <div class="vertical-center sun">
+             <div class="container">
+                <div class="row">
+                    <div class="action">
+                        <div class="col-sm-12">
+                            <h1 class="title">Profil</h1>
+                            <p>Kullanıcı bilgileri</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </section>
+    <!--/#action-->
+
+    <section id="portfolio-information" class="padding-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <img src="{{ profil.avatar.url }}" class="img-responsive" alt="">
+                </div>
+                <div class="col-sm-9">
+                    <div class="project-name overflow">
+                        <h2> <strong>Kullanıcı:</strong> {{ profil.username }} </h2>
+                        <ul class="nav navbar-nav navbar-default">
+                            <li><a href="#"><i class="fa fa-clock-o"></i>February11,2014</a></li>
+                            <li><a href="#"><i class="fa fa-tag"></i>Yetkisi</a></li>
+                        </ul>
+                    </div>
+                    <div class="project-info overflow">
+                        <h3>Hakkında</h3>
+                        <ul class="elements">
+                            <li>
+                                <i class="fa fa-angle-right"></i> <strong> Kullanıcı Adı - Soyadı:</strong>
+                                {% if profil.get_full_name == '' %}
+                                ad-soyad bilgisi yok !
+                                {% else %}
+                                {{ profil.get_full_name }}
+                                {% endif %}
+                            </li>
+                            <li>
+                                <i class="fa fa-angle-right"></i> <strong> Kullanıcı e-posta:</strong> {{ profil.email}}
+                            </li>
+                        <li>
+                            <i class="fa fa-angle-right"></i> <strong> Kullanıcı Bio: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus nibh sed elimttis adipiscing. Fusce in hendrerit purus. Suspendisse potenti. Proin quis eros odio, dapibus dictum mauris. Donec nisi libero, adipiscing id pretium eget, consectetur sit amet leo. Nam at eros quis mi egestas fringilla non nec purus.
+                        </li>
+                        </ul>
+
+
+                    </div>
+                    <div class="skills overflow">
+                        <h3>Sosyal Medya:</h3>
+                        <ul class="nav navbar-nav navbar-default">
+                            <li><a href="#"><i class="fa fa-instagram"></i>instagram</a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i>twitter</a></li>
+                            <li><a href="#"><i class="fa fa-facebook"></i>facebook</a></li>
+                            <li><a href="#"><i class="fa fa-youtube"></i>youTube</a></li>
+                        </ul>
+                    </div>
+                    <div class="client overflow">
+                        <h3>İletişim:</h3>
+                        <ul class="nav navbar-nav navbar-default">
+                            <li><a href="#"><i class="fa fa-bolt"></i>www.dindefterim.com</a></li>
+                        </ul>
+                    </div>
+                    <div class="live-preview">
+                        <a href="#" class="btn btn-common uppercase">e-posta Gönder</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+     <!--/#portfolio-information-->
+
+    <br>
+
+{% endblock %}

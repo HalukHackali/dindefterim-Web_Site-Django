@@ -39,7 +39,7 @@
                                 </div>
                                 <div class="post-content overflow">
                                     <h2 class="post-title bold"><a href="">{{ yazi.baslik }}</a></h2>
-                                    <h3 class="post-author"><a href=""><i class="fa fa-pencil"></i> Oluşturan: {{ yazi.yazar.username }}</a></h3>
+                                    <h3 class="post-author"><a href="{% url 'profil' username=yazi.yazar.username %}"><i class="fa fa-pencil"></i> Oluşturan: {{ yazi.yazar.username }}</a></h3>
                                     <p>  {{ yazi.icerik|safe }} </p>
                                     <div class="post-bottom overflow">
                                         <ul class="nav navbar-nav post-nav">
