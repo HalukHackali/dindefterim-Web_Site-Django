@@ -4,3 +4,4 @@ __pycache__
 yazi_resimleri
 .env
 media
+prod.sqlite3
