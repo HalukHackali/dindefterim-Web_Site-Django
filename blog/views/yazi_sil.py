@@ -13,9 +13,8 @@ class YaziSilDeleteView(DeleteView):
         return yazi
 
 
-'''
-@login_required(login_url='/')
-def yazi_sil(request, slug):
-    get_object_or_404(YazilarModel, slug=slug, yazar=request.user).delete()
-    return redirect('yazilarim')
-'''
+############## CLASS BASE VIEW OLMADAN KULLANIM#################
+# @login_required(login_url='/')
+# def yazi_sil(request, slug):
+#     get_object_or_404(YazilarModel, slug=slug, yazar=request.user).delete()
+#     return redirect('yazilarim')

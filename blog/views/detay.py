@@ -30,9 +30,9 @@ class DetayView(View):
 
 
 
-'''
+
 ############## CLASS BASE VIEW OLMADAN KULLANIM#################
-#def detay(request, slug):
+# def detay(request, slug):
 #    yazi = get_object_or_404(YazilarModel, slug=slug)
 #    yorumlar = yazi.yorumlar.all()
 #
@@ -50,4 +50,3 @@ class DetayView(View):
 #        'yorumlar': yorumlar,
 #        'yorum_ekle_form' : yorum_ekle_form
 #    })
-'''
