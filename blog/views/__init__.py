@@ -1,4 +1,4 @@
-from .iletisim import iletisim
+from .iletisim import IletisimFormView
 from .anasayfa import anasayfa
 from .kategori import KategoriListView
 from .yazilarim import yazilarim
