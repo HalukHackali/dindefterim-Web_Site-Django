@@ -6,7 +6,7 @@ from django.views.generic import FormView
 class IletisimFormView(FormView):
     template_name = 'pages/iletisim.html'
     form_class = IletisimForm
-    success_url = '/iletisim/email-gonderildi'
+    success_url = '/email-gonderildi'
 
     def form_valid(self, form):
         form.save()
