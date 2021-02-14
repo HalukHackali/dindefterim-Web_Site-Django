@@ -50,7 +50,6 @@
 
 
                         <li class=""><a href="{% url 'iletisim' %}">İletişim</a></li>
-                        <li class=""><a href="{% url 'giris' %}">Giriş</a></li>
 
 
                         {% if request.user.is_authenticated %}
@@ -64,6 +63,8 @@
                                     <li><a href="{% url 'cikis' %}" style="color: darkred">Çıkış</a></li>
                             </ul>
                         </li>
+                         {% else %}
+                         <li class=""><a href="{% url 'giris' %}">Giriş</a></li>
                         {% endif %}
 
 
