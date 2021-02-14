@@ -14,6 +14,9 @@ urlpatterns = [
     path('yazi-ekle', YaziEkleCreateView.as_view(), name='yazi-ekle'),
     path('yazi-guncelle/<slug:slug>', YaziGuncelleUpdateView.as_view(), name='yazi-guncelle'),
     path('yazi-sil/<slug:slug>', YaziSilDeleteView.as_view(), name='yazi-sil'),
+    path('email-gonderildi', TemplateView.as_view(
+        template_name='pages/email-gonderildi.html'
+    ), name='email-gonderildi'),
 
     # ÖNEMLİ SİTELER URLS
     path('meb', RedirectView.as_view(url="http://www.meb.gov.tr/"), name='meb'),
