@@ -10,7 +10,7 @@ class YaziEkleCreateView(LoginRequiredMixin, CreateView):
     login_url = reverse_lazy('giris')
     template_name = 'pages/yazi-ekle.html'
     model = YazilarModel
-    fields = ('baslik', 'icerik', 'resim', 'kategoriler')
+    fields = ('baslik', 'icerik', 'resim', 'etiketler', 'siniflar')
 
     def get_success_url(self):
         return reverse('detay', kwargs={

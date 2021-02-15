@@ -1,6 +1,6 @@
 from .iletisim import IletisimFormView
 from .anasayfa import anasayfa
-from .kategori import KategoriListView
+from .kategori import EtiketListView
 from .yazilarim import yazilarim
 from .detay import DetayView
 from .yorum_sil import yorum_sil
