@@ -8,3 +8,4 @@ from .yazi_sil import YaziSilDeleteView
 from .yazi_guncelle import YaziGuncelleUpdateView
 from .yazi_ekle import YaziEkleCreateView
 from .onemli_siteler import onemli_siteler
+from .sinif import SinifListView
