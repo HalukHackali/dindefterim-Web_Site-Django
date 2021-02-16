@@ -31,7 +31,7 @@
                         <div class="col-md-6 col-sm-12 blog-padding-right">
                             <div class="single-blog two-column">
                                 <div class="post-content">
-                                    <form action="{% url 'yazi-ekle' %}" enctype="multipart/form-data" method="POST">
+                                    <form enctype="multipart/form-data" method="POST">
                                         {% csrf_token %}
                                         {{ form.media }}
                                         {{ form|crispy }}
