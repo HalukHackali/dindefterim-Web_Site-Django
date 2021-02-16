@@ -20,7 +20,37 @@
         </div>
     </div>
 </section>
-
+<section >
+    <div class="container">
+        <div class="row">
+            <div style="margin: 0px auto">
+                <h2 style="text-align: center">Sitemiz Yayına Hazır olacak</h2>
+            </div>
+            <div class="col-sm-12">
+                <div class="time-count">
+                    <ul id="countdown">
+                        <li class="angle-one">
+                            <span class="days time-font">00</span>
+                            <p>Gün</p>
+                        </li>
+                        <li class="angle-two">
+                            <span class="hours time-font">00</span>
+                            <p>Saat</p>
+                        </li>
+                        <li class="angle-three">
+                            <span class="minutes time-font">00</span>
+                            <p class="minute">Dakika</p>
+                        </li>
+                        <li class="angle-four">
+                            <span class="seconds time-font">00</span>
+                            <p>Saniye</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 <section id="about-company" class="padding-top wow fadeInUp" data-wow-duration="400ms" data-wow-delay="400ms">
@@ -325,6 +355,26 @@
             </div>
         </div>
 </section>
+
     <!--/#team-->
+
+
+
+
+    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/coundown-timer.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/wow.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+    <script type="text/javascript">
+            //Countdown js
+         $("#countdown").countdown({
+                date: "10 march 2021 12:00:00",
+                format: "on"
+            },
+            function() {
+                // callback function
+        });
+    </script>
 
 {% endblock %}
