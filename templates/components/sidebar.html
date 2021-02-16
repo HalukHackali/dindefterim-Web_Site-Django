@@ -1,0 +1,74 @@
+{% load static %}
+
+{% load sinif_list %}
+{% sinif_list as siniflar %}
+
+{% load etiket_list %}
+{% etiket_list as etiketler %}
+
+    <div class="col-md-3 col-sm-5">
+                    <div class="sidebar blog-sidebar">
+
+                        <div class="sidebar-item categories">
+                            <h3>Sınıflar</h3>
+                            <ul class="nav navbar-stacked">
+                                {% for sinif in siniflar %}
+                                <li class="active"><a href="{% url 'sinif' sinifSlug=sinif.slug %}">{{ sinif.isim }}<span class="pull-right">(8)</span></a></li>
+                               {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="sidebar-item tag-cloud">
+                            <h3>Etiketler</h3>
+                            <ul class="nav nav-pills">
+                                {% for etiket in etiketler %}
+                                <li><a href="{% url 'etiket' etiketSlug=etiket.slug %}">{{ etiket.isim }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="sidebar-item  recent">
+                            <h3>En Çok Okunan Yazılar</h3>
+                            <div class="media">
+                                <div class="pull-left">
+                                    <a href="#"><img src="{% static "images/portfolio/project1.jpg" %}" alt=""></a>
+                                </div>
+                                <div class="media-body">
+                                    <h4><a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit,</a></h4>
+                                    <p>posted on  07 March 2014</p>
+                                </div>
+                            </div>
+                            <div class="media">
+                                <div class="pull-left">
+                                    <a href="#"><img src="{% static "images/portfolio/project2.jpg" %}" alt=""></a>
+                                </div>
+                                <div class="media-body">
+                                    <h4><a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit,</a></h4>
+                                    <p>posted on  07 March 2014</p>
+                                </div>
+                            </div>
+                            <div class="media">
+                                <div class="pull-left">
+                                    <a href="#"><img src="{% static "images/portfolio/project3.jpg" %}" alt=""></a>
+                                </div>
+                                <div class="media-body">
+                                    <h4><a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit,</a></h4>
+                                    <p>posted on  07 March 2014</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="sidebar-item popular">
+                            <h3>Resimler</h3>
+                            <ul class="gallery">
+                                <li><a href="#"><img src="{% static "images/portfolio/popular1.jpg" %}" alt=""></a></li>
+                                <li><a href="#"><img src="{% static "images/portfolio/popular2.jpg" %}" alt=""></a></li>
+                                <li><a href="#"><img src="{% static "images/portfolio/popular3.jpg" %}" alt=""></a></li>
+                                <li><a href="#"><img src="{% static "images/portfolio/popular4.jpg" %}" alt=""></a></li>
+                                <li><a href="#"><img src="{% static "images/portfolio/popular5.jpg" %}" alt=""></a></li>
+                                <li><a href="#"><img src="{% static "images/portfolio/popular1.jpg" %}" alt=""></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
