@@ -2,6 +2,7 @@
 {% load static %}
 
 
+
 <title>{% block title %}Anasayfa | dindefterim {% endblock %}</title>
 {% block content %}
 
@@ -13,7 +14,7 @@
                     <div class="slide-text">
                         <h1><small> Din Kültürü ve Ahlak Bilgisi </small></h1>
                         <p>“dindefterim.com” sitesi; İlkokul ve Ortaokul “Din Kültürü ve Ahlak Bilgisi” derslerine yönelik birçok dokümanın paylaşıldığı ücretsiz bir paylaşım sitesidir. Sitemizden daha fazl yararlanmak için kayıt olabilrsiniz.</p>
-                        <a href="#" class="btn btn-common">Kayıt Ol</a>
+                        <a href="{% url 'kayit' %}" class="btn btn-common">Kayıt Ol</a>
                     </div>
                     <img src="{% static "images/home/slider/hill.png" %}" class="slider-hill" alt="slider image">
                     <img src="{% static "images/home/slider/house.png" %}" class="slider-house" alt="slider image">
@@ -36,11 +37,11 @@
                             <img src="{% static "images/home/5-sinif.png" %}" alt="">
                         </div>
                         <h2>5.Sınıf Üniteler</h2>
-                        <p><small>Allah İnancı</small></p>
-                        <p><small>Ramazan Ayı ve Oruç</small></p>
-                        <p><small>Adap ve Nezaket </small></p>
-                        <p><small>Hz.Muhammed ve Aile Hayatı</small></p>
-                        <p><small>Çevremizde Dinin İzleri</small></p>
+                        <a href="http://127.0.0.1:8000/detay/1unite-allah-inanci"><small>Allah İnancı</small></a><br>
+                        <a href=""><small>Ramazan Ayı ve Oruç</small></a><br>
+                        <a href=""><small>Adap ve Nezaket </small></a><br>
+                        <a href=""><small>Hz.Muhammed ve Aile Hayatı</small></a><br>
+                        <a href=""><small>Çevremizde Dinin İzleri</small></a>
                     </div>
                 </div>
                 <div class="col-sm-3 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
@@ -49,11 +50,11 @@
                             <img src="{% static "images/home/6-sinif.png" %}" alt="">
                         </div>
                         <h2>6.Sınıf Üniteler</h2>
-                        <p><small>Peygamberler ve İlahi Kitap İnancı</small></p>
-                        <p><small>Namaz</small> </p>
-                        <p><small>Zararlı Alışkanlıklar</small></p>
-                        <p><small>Hz.Muhammed’in Hayatı</small></p>
-                        <p><small>Temel Değerlerimiz</small></p>
+                        <a href=""><small>Peygamberler ve İlahi Kitap İnancı</small></a><br>
+                        <a href=""><small>Namaz</small> </a><br>
+                        <a href=""><small>Zararlı Alışkanlıklar</small></a><br>
+                        <a href=""><small>Hz.Muhammed’in Hayatı</small></a><br>
+                        <a href=""><small>Temel Değerlerimiz</small></a><br>
                     </div>
                 </div>
                 <div class="col-sm-3 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="900ms">
@@ -62,11 +63,11 @@
                             <img src="{% static "images/home/7-sinif.png" %}" alt="">
                         </div>
                         <h2>7.Sınıf Üniteler</h2>
-                        <p><small>Melek ve Ahiret İnancı</small></p>
-                        <p><small>Hac ve Kurban</small></p>
-                        <p><small>Ahlaki Davranışlar</small></p>
-                        <p><small>Allahın Kulu ve Elçisi Hz.Muhammed</small></p>
-                        <p><small>İslam Düşüncesinde Yorumlar</small></p>
+                        <a href=""><small>Melek ve Ahiret İnancı</small></a><br>
+                        <a href=""><small>Hac ve Kurban</small></a><br>
+                        <a href=""><small>Ahlaki Davranışlar</small></a><br>
+                        <a href=""><small>Allahın Kulu ve Elçisi Hz.Muhammed</small></a><br>
+                        <a href=""><small>İslam Düşüncesinde Yorumlar</small></a><br>
                     </div>
                 </div>
                 <div class="col-sm-3 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="1400ms">
@@ -75,11 +76,11 @@
                             <img src="{% static "images/home/8-sinif.png" %}" alt="">
                         </div>
                         <h2>8.Sınıf Üniteler</h2>
-                        <p><small>Kader İnancı</small></p>
-                        <p><small>Zekat ve Sadaka</small></p>
-                        <p><small>Din ve Hayat</small></p>
-                        <p><small>Hz. Muhammedin Örnekliği</small></p>
-                        <p><small>Kuran-ı Kerim ve Özellikleri</small></p>
+                        <a href=""><small>Kader İnancı</small></a><br>
+                        <a href=""><small>Zekat ve Sadaka</small></a><br>
+                        <a href=""><small>Din ve Hayat</small></a><br>
+                        <a href=""><small>Hz. Muhammedin Örnekliği</small></a><br>
+                        <a href=""><small>Kuran-ı Kerim ve Özellikleri</small></a><br>
                     </div>
                 </div>
 
@@ -158,11 +159,17 @@
                         <p>Güzel bir söz ve bağışlama, peşinden gönül kırma gelen bir sadakadan daha hayırlıdır. <br> Allah, her bakımdan sınırsız zengindir, halimdir (hemen cezalandırmaz, mühlet verir).</p>
                         <h4 class="title">Bakara 263</h4>
                     </div>
-                    <div class="clients-logo wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
+                    <div class="clients-logo wow fadeIn text-center" data-wow-duration="1000ms" data-wow-delay="600ms">
+
+                        {% load hit_tag %}
+                        {% hit_tags as tags %}
+                        {% for tag in tags %}
+                        <div class="col-xs-3  ">
+                            <a href="{% url 'detay' slug=tag.slug %}" ><img src="{{ tag.resim.url }}" class="img-responsive" alt=""></a>
+                        </div>
+                        {% endfor %}
+                    <!--
                         <div class="col-xs-3 col-sm-2">
-                            <a href="#"><img src="{% static "images/home/130x55-1.png" %}" class="img-responsive" alt=""></a>
-                        </div>
-                        <div class="col-xs-3 col-sm-2">
                             <a href="#"><img src="{% static "images/home/130x55-2.png" %}" class="img-responsive" alt=""></a>
                         </div>
                          <div class="col-xs-3 col-sm-2">
@@ -177,6 +184,8 @@
                          <div class="col-xs-3 col-sm-2">
                             <a href="#"><img src="{% static "images/home/130x55-2.png" %}" class="img-responsive" alt=""></a>
                         </div>
+                        -->
+
                     </div>
                 </div>
             </div>
