@@ -14,3 +14,4 @@ class YorumModel(DateAbstractModel):
 
     def __str__(self):
         return self.yazan.username
+

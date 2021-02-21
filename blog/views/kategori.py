@@ -19,7 +19,7 @@ class EtiketListView(ListView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(EtiketListView, self).get_context_data(**kwargs)
         self.etiket = get_object_or_404(EtiketModel, slug=self.kwargs['etiketSlug'])
-        context['kategori'] = self.etiket
+        context['etiket'] = self.etiket
         return context
 
 

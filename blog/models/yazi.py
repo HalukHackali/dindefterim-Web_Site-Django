@@ -22,3 +22,10 @@ class YazilarModel(DateAbstractModel):
 
     def __str__(self):
         return self.baslik
+
+    def comment_count(self):
+        return self.yorumlar.all().count()
+
+
+
+
