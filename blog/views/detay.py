@@ -26,7 +26,7 @@ class DetayView(View):
         if request.user.is_authenticated:
             logger.info('konu okundu ' + request.user.username)
 
-        yorumlar = yazi.yorumlar.all()
+        yorumlar = yazi.yorumlar.all().order_by('-id')
         return render(request, 'pages/detay.html', context={
             'yazi': yazi,
             'yorumlar': yorumlar,

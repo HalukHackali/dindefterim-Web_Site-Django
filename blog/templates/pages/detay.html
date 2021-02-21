@@ -120,7 +120,7 @@
                                                                     href="#">{{ yorum.yazan.username }}</a></span>
                                                             <p>{{ yorum.yorum }}</p>
                                                             <ul class="nav navbar-nav post-nav">
-                                                                <li><a href="#"><i class="fa fa-clock-o"></i>February 11,2014</a></li>
+                                                                <li><a href="#"><i class="fa fa-clock-o"></i>{{ yorum.olusturulma_tarihi|date:'d-m-Y' }}</a></li>
                                                                 <li><a href="#"><i class="fa fa-reply"></i>Cevapla</a></li>
                                                                 {% if request.user == yorum.yazan or request.user == yazi.yazar %}
                                                                 <li><a href="{% url 'yorum-sil' id=yorum.id %}"><i class="fa fa-trash"></i>Yorumu Sil</a></li>
