@@ -13,3 +13,6 @@ class SinifModel(models.Model):
 
     def __str__(self):
         return self.isim
+
+    def yazi_count(self):
+        return self.yazi.all().count()
