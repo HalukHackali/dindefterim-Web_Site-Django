@@ -1633,6 +1633,10 @@ a.read-more:hover{
   color: #01707F
 }
 
+.hit-count{
+  color: #702340;
+}
+
 .post-bottom{
   border-top: 1px solid #eeeeee;
   padding-top: 10px;

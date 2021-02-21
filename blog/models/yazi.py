@@ -13,6 +13,7 @@ class YazilarModel(DateAbstractModel):
     resim = models.ImageField(upload_to='yazi_resimleri')
     yazar = models.ForeignKey('account.CustomUserModel', on_delete=models.CASCADE, related_name='yazilar')
     siniflar = models.ForeignKey(SinifModel, null=True, on_delete=models.DO_NOTHING, related_name='yazi')
+    hit = models.PositiveIntegerField(default=0)
 
     class Meta:
         db_table = 'Yazi'
