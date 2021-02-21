@@ -39,7 +39,20 @@
                                 </div>
                                 <div class="post-content overflow">
                                     <h2 class="post-title bold"><a href="">{{ yazi.baslik }}</a></h2>
-                                    <h3 class="post-author"><a href="{% url 'profil' username=yazi.yazar.username %}"><i class="fa fa-pencil"></i> Oluşturan: {{ yazi.yazar.username }}</a></h3>
+
+                                    <h3 class="post-author">
+                                        <a href="{% url 'profil' username=yazi.yazar.username %}"><i class="fa fa-pencil"></i> Yazar: {{ yazi.yazar.username }}</a>
+
+                                    {% load etiket_list %}
+                                    {% etiket_list as etiketler %}
+                                    {% for etiket in etiketler %}
+                                        <span >
+                                        <a href="{% url 'etiket' etiketSlug=etiket.slug %}" style="float: right; padding-left: 10px; margin-right: 5px;" ><i class="fa fa-tags" ></i> {{ etiket.isim }}</a>
+                                        </span>
+                                    {% endfor %}
+
+                                    </h3>
+
                                     <p>  {{ yazi.icerik|safe }} </p>
                                     <div class="post-bottom overflow">
                                         <ul class="nav navbar-nav post-nav">
@@ -116,7 +129,7 @@
                                                             </a>
                                                         {% endif %}
                                                         <div class="media-body">
-                                                            <span><i class="fa fa-user"></i>Posted by <a
+                                                            <span><i class="fa fa-user"></i>Yorum yapan <a
                                                                     href="#">{{ yorum.yazan.username }}</a></span>
                                                             <p>{{ yorum.yorum }}</p>
                                                             <ul class="nav navbar-nav post-nav">
