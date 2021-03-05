@@ -1,4 +1,4 @@
-from  django.db import models
+from django.db import models
 from autoslug import AutoSlugField
 from .sinif_model import SinifModel
 from blog.models import EtiketModel
@@ -14,6 +14,7 @@ class YazilarModel(DateAbstractModel):
     yazar = models.ForeignKey('account.CustomUserModel', on_delete=models.CASCADE, related_name='yazilar')
     siniflar = models.ForeignKey(SinifModel, null=True, on_delete=models.DO_NOTHING, related_name='yazi')
     hit = models.PositiveIntegerField(default=0)
+    yayinlandi = models.BooleanField(default=True)
 
     class Meta:
         db_table = 'Yazi'

@@ -8,7 +8,7 @@ admin.site.register(EtiketModel)
 @admin.register(YazilarModel)
 class YazilarAdmin(admin.ModelAdmin):
     search_fields = ('baslik', 'icerik')
-    list_display = ( 'baslik', 'siniflar', 'olusturulma_tarihi', 'duzenlenme_tarihi', 'yazar')
+    list_display = ('baslik', 'siniflar', 'olusturulma_tarihi', 'duzenlenme_tarihi', 'yazar', 'yayinlandi')
 
 @admin.register(YorumModel)
 class YorumAdmin(admin.ModelAdmin):

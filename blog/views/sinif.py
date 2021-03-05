@@ -12,7 +12,7 @@ class SinifListView(ListView):
 
     def get_queryset(self):
         sinif = get_object_or_404(SinifModel, slug=self.kwargs['sinifSlug'])
-        return sinif.yazi.all().order_by('id')
+        return sinif.yazi.filter(yayinlandi=True).order_by('id')
 
 
 
