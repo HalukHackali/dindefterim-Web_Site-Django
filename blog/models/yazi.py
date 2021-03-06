@@ -14,7 +14,7 @@ class YazilarModel(DateAbstractModel):
     yazar = models.ForeignKey('account.CustomUserModel', on_delete=models.CASCADE, related_name='yazilar')
     siniflar = models.ForeignKey(SinifModel, null=True, on_delete=models.DO_NOTHING, related_name='yazi')
     hit = models.PositiveIntegerField(default=0)
-    yayinlandi = models.BooleanField(default=True)
+    yayinlandi = models.BooleanField(default=False)
 
     class Meta:
         db_table = 'Yazi'
