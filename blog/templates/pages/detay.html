@@ -57,9 +57,9 @@
                                     <div class="post-bottom overflow">
                                         <ul class="nav navbar-nav post-nav">
 
-                                            <li><a href="#"><i class="fa fa-heart"></i>32 Beğeni</a></li>
+                                            <li><a href="{% url 'like_post' slug=yazi.slug %}"> <i class="fa fa-heart"></i>{{ yazi.total_likes }} Beğeni</a></li>
 
-                                            <li><a href="#"><i class="fa fa-comments"></i>{{ yazi.comment_count }} Yorum</a></li>
+                                            <li><a href="#"><i class="fa fa-comments"></i> {{ yazi.comment_count }} Yorum</a></li>
 
                                             {% if  request.user == yazi.yazar %}
                                             <li><a href="{% url 'yazi-sil' slug=yazi.slug %}"><i class="fa fa-trash"></i>Yazı Sil</a></li>

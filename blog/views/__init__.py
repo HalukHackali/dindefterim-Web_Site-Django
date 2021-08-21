@@ -9,3 +9,4 @@ from .yazi_ekle import YaziEkleCreateView
 from .onemli_siteler import onemli_siteler
 from .sinif import SinifListView
 from .konu import KonuListView
+from .like import LikeView

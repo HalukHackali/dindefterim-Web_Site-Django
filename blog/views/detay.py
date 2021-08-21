@@ -21,6 +21,7 @@ class DetayView(View):
 
     def get(self, request, slug, *args, **kwargs):
         yazi = get_object_or_404(YazilarModel, slug=slug)
+        self.total_likes = yazi.total_likes()
         self.hit = YazilarModel.objects.filter(slug=self.kwargs['slug']).update(hit=F('hit') + 1)
 
         if request.user.is_authenticated:

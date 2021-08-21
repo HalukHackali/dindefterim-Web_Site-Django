@@ -28,6 +28,9 @@ class YazilarModel(DateAbstractModel):
     def comment_count(self):
         return self.yorumlar.all().count()
 
+    def total_likes(self):
+        return self.likes.count()
+
 
 
 

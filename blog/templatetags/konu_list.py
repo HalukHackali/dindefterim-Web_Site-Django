@@ -1,5 +1,5 @@
 from django import template
-from  blog.models import KonuModel
+from blog.models import KonuModel
 
 register = template.Library()
 
