@@ -60,11 +60,10 @@
                     </div><!-- =============ROW END============== -->
 
 
-
-                    <div class="blog-pagination"><!-- =============PAGINATION============== -->
-
+                    {% if sinif.yazi_count >= 6 %}
+                    <!-- =============PAGINATION============== -->
+                    <div class="blog-pagination">
                         <ul class="pagination">
-
                         {% if page_obj.has_previous %}
                           <li class="active"><a href="?page={{ page_obj.previous_page_number }}">left</a></li>
                         {% else %}
@@ -72,18 +71,16 @@
                               <a class="pageLink" href="#" tabindex="-1" aria-disabled="true">left</a>
                           </li>
                         {%  endif %}
-
                              <li class="active pageLink"><a href="#">{{ page_obj.number }}</a></li>
-
                         {% if page_obj.has_next %}
                             <li class="active"><a href="?page={{ page_obj.next_page_number }}">right</a></li>
                        {% else %}
                             <li class="active"><a href="?page={{ page_obj.paginator.num_pages }}">right</a></li>
                         {% endif %}
-
                         </ul>
-
-                    </div><!-- =============PAGINATION END============== -->
+                    </div>
+                    <!-- =============PAGINATION END============== -->
+                {% endif %}
 
 
 
