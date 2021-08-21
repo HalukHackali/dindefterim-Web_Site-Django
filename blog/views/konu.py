@@ -6,7 +6,7 @@ from django.views.generic import ListView
 class KonuListView(ListView):
     template_name = 'pages/konu.html'
     context_object_name = 'yazilar'
-    paginate_by = 4
+    paginate_by = 5
 
 
 

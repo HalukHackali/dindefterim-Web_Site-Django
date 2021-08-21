@@ -6,7 +6,7 @@ from django.views.generic import ListView
 class SinifListView(ListView):
     template_name = 'pages/sinif.html'
     context_object_name = 'yazilar'
-    paginate_by = 4
+    paginate_by = 5
 
 
 
