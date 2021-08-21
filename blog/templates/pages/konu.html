@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title%} {{ etiket.isim }} | dindefterim {% endblock%}
+{% block title%} {{ konu.isim }} | dindefterim {% endblock%}
 
 {% block content %}
 
@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="action">
                         <div class="col-sm-12">
-                            <h1 class="title">Konu | {{etiket.isim}}</h1>
+                            <h1 class="title">Konu | {{konu.isim}}</h1>
                         </div>
                     </div>
                 </div>
@@ -45,7 +45,7 @@
                                     <a href="{% url 'detay' slug=yazi.slug %}" class="read-more">Devamını Oku</a>
                                     <div class="post-bottom overflow">
                                         <ul class="nav nav-justified post-nav">
-                                            <li><a href="#"><i class="fa fa-tag"></i>Etiket</a></li>
+                                            <li><a href="#"><i class="fa fa-tag"></i>Konu</a></li>
                                             <li><a href="#"><i class="fa fa-heart"></i>3 Beğeni</a></li>
                                             <li><a href="#"><i class="fa fa-comments"></i>{{ yazi.comment_count }}</a></li>
                                         </ul>

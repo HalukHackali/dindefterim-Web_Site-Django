@@ -1,7 +1,7 @@
 from django.db import models
 from autoslug import AutoSlugField
 from .sinif_model import SinifModel
-from blog.models import EtiketModel
+from blog.models import KonuModel
 from ckeditor.fields import RichTextField
 from blog.abstract_models import DateAbstractModel
 
@@ -9,7 +9,7 @@ class YazilarModel(DateAbstractModel):
     baslik = models.CharField(max_length=150)
     icerik = RichTextField()
     slug = AutoSlugField(populate_from='baslik', unique=True)
-    etiketler = models.ManyToManyField(EtiketModel, related_name='yazi')
+    konular = models.ManyToManyField(KonuModel, related_name='yazi')
     resim = models.ImageField(upload_to='yazi_resimleri')
     yazar = models.ForeignKey('account.CustomUserModel', on_delete=models.CASCADE, related_name='yazilar')
     siniflar = models.ForeignKey(SinifModel, null=True, on_delete=models.DO_NOTHING, related_name='yazi')

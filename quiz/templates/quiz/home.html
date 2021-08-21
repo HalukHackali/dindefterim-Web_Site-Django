@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Let's Quiz | Home {% endblock title %}
+{% block content %}
+
+
+
+
+    <section id="section-jumbotron" class="jumbotron jumbotron-fluid d-flex justify-content-center align-items-center">
+      <div class="container text-center">
+        <h1 class="display-1 text-info">Let's Quiz</h1>
+        <p class="display-4 d-none d-sm-block">Becerilerinizi test edin ve bir usta olun.</p>
+        <p class="lead">Çeşitli konularda sınavlar düzenliyoruz.</p>
+
+        {% if not request.user.is_active %}
+
+        <p class="lead">Henüz yapmadıysanız kaydolun ve ilgilendiğiniz konuyla ilgili milyonlarca teste erişin.</p>
+        <p><strong> Yolculuğunuza Buradan Başlayın:</strong></p>
+        <a href="{% url 'quiz:register' %}" class="btn btn-lg btn-info mt-1"><i class="fa fa-user-plus" aria-hidden="true"></i> Kaydol</a>
+
+        {% else %}
+        <a href="{% url 'quiz:play' %}" class="btn btn-lg btn-info mt-1">Başla</a>
+        <a href="{% url 'quiz:leaderboard' %}" class="btn btn-lg btn-danger mt-1">Liderler Sıralaması</a>
+        {% endif %}
+      </div>  
+    </section>
+
+{% endblock content %}

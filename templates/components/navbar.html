@@ -1,6 +1,6 @@
 {% load static %}
-{% load etiket_list %}
-{% etiket_list as etiketler %}
+{% load konu_list %}
+{% konu_list as konular %}
 
 
 {% load sinif_list %}
@@ -55,8 +55,8 @@
                         <li class="dropdown"><a href="#">Konular <i class="fa fa-angle-down"></i></a>
                             <ul role="menu" class="sub-menu">
 
-                                {% for etiket in etiketler %}
-                                    <li><a href="{% url 'etiket' etiketSlug=etiket.slug %}">{{ etiket.isim }}</a></li>
+                                {% for konu in konular %}
+                                    <li><a href="{% url 'konu' konuSlug=konu.slug %}">{{ konu.isim }}</a></li>
                                 {% endfor %}
 
                             </ul>

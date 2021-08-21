@@ -43,11 +43,11 @@
                                     <h3 class="post-author">
                                         <a href="{% url 'profil' username=yazi.yazar.username %}"><i class="fa fa-pencil"></i> Yazar: {{ yazi.yazar.username }}</a>
 
-                                    {% load etiket_list %}
-                                    {% etiket_list as etiketler %}
-                                    {% for etiket in etiketler %}
+                                    {% load konu_list %}
+                                    {% konu_list as konular %}
+                                    {% for konu in konular %}
                                         <span >
-                                        <a href="{% url 'etiket' etiketSlug=etiket.slug %}" style="float: right; padding-left: 10px; margin-right: 5px;" ><i class="fa fa-tags" ></i> {{ etiket.isim }}</a>
+                                        <a href="{% url 'konu' konuSlug=konu.slug %}" style="float: right; padding-left: 10px; margin-right: 5px;" ><i class="fa fa-tags" ></i> {{ konu.isim }}</a>
                                         </span>
                                     {% endfor %}
 

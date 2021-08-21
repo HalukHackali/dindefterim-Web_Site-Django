@@ -3,8 +3,8 @@
 {% load sinif_list %}
 {% sinif_list as siniflar %}
 
-{% load etiket_list %}
-{% etiket_list as etiketler %}
+{% load konu_list %}
+{% konu_list as konular %}
 
 {% load hit_tag %}
 {% hit_tags as tags %}
@@ -25,8 +25,8 @@
                         <div class="sidebar-item tag-cloud">
                             <h3>Etiketler</h3>
                             <ul class="nav nav-pills">
-                                {% for etiket in etiketler %}
-                                <li><a href="{% url 'etiket' etiketSlug=etiket.slug %}">{{ etiket.isim }}</a></li>
+                                {% for konu in konular %}
+                                <li><a href="{% url 'konu' konuSlug=konu.slug %}">{{ konu.isim }}</a></li>
                                 {% endfor %}
                             </ul>
                         </div>

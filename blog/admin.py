@@ -1,9 +1,9 @@
 from django.contrib import admin
-from blog.models import EtiketModel, YazilarModel, YorumModel, IletisimModel, SinifModel
+from blog.models import KonuModel, YazilarModel, YorumModel, IletisimModel, SinifModel
 
 # Register your models here.
 
-admin.site.register(EtiketModel)
+admin.site.register(KonuModel)
 
 @admin.register(YazilarModel)
 class YazilarAdmin(admin.ModelAdmin):

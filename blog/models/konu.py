@@ -1,15 +1,15 @@
 from django.db import models
 from autoslug import AutoSlugField
 
-class EtiketModel(models.Model):
+class KonuModel(models.Model):
     isim = models.CharField(max_length=100, blank=False, null=False)
     # SLUG KULLANMAK İÇİN : $ pipenv install django-autoslug
     slug = AutoSlugField(populate_from='isim', unique=True)
 
     class Meta:
-        db_table = 'Etiket'
-        verbose_name = 'Etiket'
-        verbose_name_plural = 'Etiketler'
+        db_table = 'Konu'
+        verbose_name = 'Konu'
+        verbose_name_plural = 'Konular'
 
     # makemigrations yapabilmek için __init__.py'e ekle !
 

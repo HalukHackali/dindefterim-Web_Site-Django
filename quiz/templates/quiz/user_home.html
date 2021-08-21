@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Let's Quiz | Welcome {% endblock title %}
+{% block content %}
+
+
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container">
+            <h1><a href="{% url 'quiz:home' %}" class="navbar-brand">
+            <strong>Let's Quiz</strong></a></h1>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse justify-content-end " id="navbar">
+                {% if not request.user.is_active %}
+                <a href="{% url 'quiz:leaderboard' %}" class="btn btn-info mt-1 mx-1">Liderler Sıralaması</a>
+                <a href="{% url 'quiz:login' %}" class="btn btn-info mt-1"><i class="fa fa-sign-in" aria-hidden="true"></i> Oturum aç</a>
+                {% else %}
+                <h6 class="text-white mt-2 mr-2">Hoşgeldin, {{ request.user.username }} | </h6>
+                <h6 class="text-white mt-2 mr-2"><a href="{% url 'quiz:leaderboard' %}" class="text-white">Liderler Sıralaması</a> |</h6>
+                <h6 class="mt-2"><a href="{% url 'quiz:play' %}" class="text-white">Başla</a></h6>
+                <a href="{% url 'quiz:logout' %}" class="btn btn-danger mt-1 mx-1">Çıkış Yap <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                {% endif %}
+            </div>
+        </div>
+
+    </nav>
+
+
+<div class="container my-4">
+    <div class="jumbotron">
+
+	      <h2 class="text-center text-info">Tebrikler!! Başarıyla giriş yaptınız.</h2>
+	      <h3 class="text-info text-center">Testi başlamadan önce kuralları okuyun</h3>
+
+        <div class="row">
+
+            <div class="card border-info mx-4 my-4">
+                <div class="card-body text-info">
+                    <h4 class="card-title">Kurallar :</h4>
+                    <p class="card-text">
+                        <ul style="list-style:decimal;">
+                            <li>Tüm sorular çoktan seçmeli sorudur.</li>
+                            <li><span class="text-danger">Yalnızca bir seçenek doğrudur.</span></li>
+                            <li>Her sorunun puan değeri ayndır yani:<span class="text-danger"> Her soru 4 puan.</span></li>
+                            <li>Her soru kullanıcı başına yalnızca bir kez görüntülenir.</li>
+                            <li>Mümkün olduğunca çabuk cevap vermeye çalışın.</li>
+                            <li>Yenile tuşuna basarsanız veya önceki sayfaya geri dönerseniz, sizin için yeni bir soru olacaktır ve üzerinde bulunduğunuz soru deneme olarak sayılacaktır.</li>
+                            <li>Sorular her kullanıcı için rastgele görüntülenir.</li>
+                            <li>Cevabı gönderdikten sonra cevabınızın doğru mu yanlış mı olduğu derhal size söylenecektir.</li>
+                        </ul>
+                    </p>
+                    <a href="{% url 'quiz:play' %}" class="btn btn-info">Başla</a>
+                </div>  
+                <div class="card-footer">Kurallar son değiştirilme tarihi: 03 Mart 2021</div>  
+            </div>  
+        </div>  
+
+    </div>
+</div>
+{% endblock content %}
