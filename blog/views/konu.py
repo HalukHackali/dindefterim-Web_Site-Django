@@ -11,14 +11,14 @@ class KonuListView(ListView):
 
 
     def get_queryset(self):
-        konu = get_object_or_404(KonuListView, slug=self.kwargs['konuSlug'])
+        konu = get_object_or_404(KonuModel, slug=self.kwargs['konuSlug'])
         return konu.yazi.all().order_by('id')
 
 
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(KonuListView, self).get_context_data(**kwargs)
-        self.konu = get_object_or_404(KonuListView, slug=self.kwargs['konuSlug'])
+        self.konu = get_object_or_404(KonuModel, slug=self.kwargs['konuSlug'])
         context['konu'] = self.konu
         return context
 
