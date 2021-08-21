@@ -15,6 +15,7 @@ class YazilarModel(DateAbstractModel):
     siniflar = models.ForeignKey(SinifModel, null=True, on_delete=models.DO_NOTHING, related_name='yazi')
     hit = models.PositiveIntegerField(default=0)
     yayinlandi = models.BooleanField(default=True)
+    likes = models.ManyToManyField('account.CustomUserModel', related_name='blog_post')
 
     class Meta:
         db_table = 'Yazi'
