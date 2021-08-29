@@ -1,11 +1,11 @@
 from django.db.models import F
 from django.shortcuts import render, get_object_or_404, redirect
-from blog.models import YazilarModel
+from blog.models import YazilarModel, KonuModel
 from blog.forms import YorumEkleModelForm
 from django.views import View
 from django.contrib import messages
 import logging
-
+from django.views.generic import ListView
 
 logger = logging.getLogger('konu_okuma')
 
@@ -14,10 +14,6 @@ class DetayView(View):
     http_method_names = ['get', 'post']
     yorum_ekle_form = YorumEkleModelForm
     yazi = YazilarModel
-
-
-
-
 
     def get(self, request, slug, *args, **kwargs):
         yazi = get_object_or_404(YazilarModel, slug=slug)

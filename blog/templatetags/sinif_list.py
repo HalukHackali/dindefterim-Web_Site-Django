@@ -1,5 +1,5 @@
 from django import template
-from  blog.models import SinifModel
+from blog.models import SinifModel
 
 register = template.Library()
 
