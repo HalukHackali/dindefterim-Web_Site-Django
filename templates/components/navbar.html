@@ -65,6 +65,13 @@
 
                         <li class=""><a href="{% url 'iletisim' %}">İletişim</a></li>
 
+                        <li class="dropdown"><a href="#">Kendini Dene <i class="fa fa-angle-down"></i></a>
+                            <ul role="menu" class="sub-menu">
+                                <li class=""><a href="{% url 'quiz:home' %}">Teste Başla</a></li>
+                                <li class=""><a href="{% url 'quiz:leaderboard' %}">Lider Tablosu</a></li>
+                            </ul>
+                        </li>
+
 
                         {% if request.user.is_authenticated %}
                          <li class="dropdown active"><a href="#">Dashboard <i class="fa fa-angle-down"></i></a>
@@ -75,6 +82,7 @@
                                     <li><a href="{% url 'kayit' %}">Kayıt Ol</a></li>
                                     <li><a href="{% url 'sifre-degistir' %}">Şifre Değiştir</a></li>
                                     <li><a href="{% url 'cikis' %}" style="color: darkred">Çıkış</a></li>
+
                             </ul>
                         </li>
                          {% else %}

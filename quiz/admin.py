@@ -20,10 +20,10 @@ class QuestionAdmin(admin.ModelAdmin):
     list_display = ['html', 'is_published','maximum_marks']
     list_filter = ['is_published', ]
     search_fields = ['html', 'choices__html']
-    #actions = None
+    actions = None
     form = QuestionForm
 
-    #def has_delete_permission(self, request, obj=None):
+    # def has_delete_permission(self, request, obj=None):
     #     return False
 
     # def has_change_permission(self, request, obj=None):

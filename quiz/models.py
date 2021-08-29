@@ -9,12 +9,17 @@ from account.models import CustomUserModel
 class Question(TimeStampedModel):
     ALLOWED_NUMBER_OF_CORRECT_CHOICES = 1
 
-    html = models.TextField(_('Sorular'))
+    html = models.TextField(_('Soru'))
     is_published = models.BooleanField(_('Yayınlandı mı?'), default=False, null=False)
     maximum_marks = models.DecimalField(_('Maksimum Puanlar'), default=4, decimal_places=2, max_digits=6)
 
     def __str__(self):
         return self.html
+
+    class Meta:
+        db_table = 'Soru'
+        verbose_name = 'Soru'
+        verbose_name_plural = 'Sorular'
 
 
 class Choice(TimeStampedModel):
@@ -26,6 +31,11 @@ class Choice(TimeStampedModel):
 
     def __str__(self):
         return self.html
+
+    class Meta:
+        db_table = 'Seçenek'
+        verbose_name = 'Seçenek'
+        verbose_name_plural = 'Seçenekler'
 
 
 class QuizProfile(TimeStampedModel):
