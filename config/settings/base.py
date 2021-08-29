@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog',
     'account',
+    'quiz',
     # third party apps
     'ckeditor',
     'crispy_forms',
