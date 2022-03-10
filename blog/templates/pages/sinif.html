@@ -31,9 +31,9 @@
                             <div class="single-blog two-column">
 
                                 <div class="post-thumb">
-                                    <a href="#"><img src="{{ yazi.resim.url }}" class="img-responsive" alt=""></a>
+                                    <a href="{% url 'detay' slug=yazi.slug %}"><img src="{{ yazi.resim.url }}" class="img-responsive" alt=""></a>
                                     <div class="post-overlay">
-                                        <span class="uppercase"><a href="#"><small>{{ yazi.duzenlenme_tarihi|date:'d-m-y' }}</small></a></span>
+                                        <span class="uppercase"><a href="{% url 'detay' slug=yazi.slug %}"><small>{{ yazi.duzenlenme_tarihi|date:'d-m-y' }}</small></a></span>
                                     </div>
                                 </div>
                                 <div class="post-content overflow">
@@ -41,7 +41,7 @@
                                    <!--
                                     <h3 class="post-author"><a href="#"><i class="fa fa-pencil"></i> Oluşturan: {{ yazi.yazar.username }}</a></h3>
                                    -->
-                                    <p> {{ yazi.icerik|safe|truncatechars_html:85}}</p>
+                                    <p> {{ yazi.icerik|safe|truncatechars_html:19}}</p>
                                     <a href="{% url 'detay' slug=yazi.slug %}" class="read-more">Devamını Oku</a>
                                     <div class="post-bottom overflow">
                                         <ul class="nav nav-justified post-nav">
